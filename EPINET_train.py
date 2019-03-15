@@ -140,7 +140,7 @@ if __name__ == '__main__':
     label_size=input_size-22 # Since label_size should be greater than or equal to 1
     Setting02_AngualrViews = np.array([0,1,2,3,4,5,6,7,8])  # number of views ( 0~8 for 9x9 ) 
     
-    batch_size=16       
+    batch_size=64       
     workers_num=2  # number of threads
     
     display_status_ratio=10000 
