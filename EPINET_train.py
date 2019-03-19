@@ -114,7 +114,7 @@ if __name__ == '__main__':
 
     iter00=0; 
     
-    load_weight_is=False;   
+    load_weight_is=True;   
 
         
     
