@@ -88,7 +88,8 @@ if __name__ == '__main__':
 #    Setting01_LFdir='Lytro'
     
     if(Setting01_LFdir=='synthetic'):    
-        dir_LFimages=['hci_dataset/training/dino','hci_dataset/training/cotton']
+        dir_LFimages=['hci_dataset/training/dino','hci_dataset/training/cotton',
+                    'hci_dataset/training/boxes', 'hci_dataset/training/sideboard']
         image_w=512
         image_h=512
         
@@ -138,8 +139,8 @@ if __name__ == '__main__':
     if(len(Setting02_AngualrViews)==5):
         path_weight='epinet_checkpoints/pretrained_5x5.hdf5' # sample weight.    
     if(len(Setting02_AngualrViews)==9):
-        path_weight='epinet_checkpoints/pretrained_9x9.hdf5' # sample weight.
-#        path_weight='epinet_checkpoints/EPINET_train_ckp/iter0097_trainmse2.706_bp12.06.hdf5'
+        # path_weight='epinet_checkpoints/pretrained_9x9.hdf5' # sample weight.
+        path_weight='epinet_checkpoints/EPINET_train_ckp/iter0151_trainmse0.973_bp3.28.hdf5'
 
 
 
