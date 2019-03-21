@@ -104,8 +104,8 @@ if __name__ == '__main__':
     GPU setting ( Our setting: gtx 1080ti,  
                                gpu number = 0 ) 
     '''
-    os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-    os.environ["CUDA_VISIBLE_DEVICES"]="0"    
+    # os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
+    # os.environ["CUDA_VISIBLE_DEVICES"]="0"    
 
     
     networkname='EPINET_train'
@@ -270,7 +270,7 @@ if __name__ == '__main__':
     
     my_generator = myGenerator(traindata_all,traindata_label,input_size,label_size,batch_size,Setting02_AngualrViews ,boolmask_img4,boolmask_img6,boolmask_img15)
     best_bad_pixel=100.0
-    for iter02 in range(3):
+    for iter02 in range(50):
         
         ''' Patch-wise training... start'''
         t0=time.time()
@@ -285,13 +285,15 @@ if __name__ == '__main__':
         ''' Test after N*(display_status_ratio) iteration.'''
         weight_tmp1=model.get_weights() 
         model_512.set_weights(weight_tmp1)
-        train_output=model_512.predict([traindata_90d,traindata_0d,
-                                        traindata_45d,traindata_m45d],batch_size=1)
-
+        # train_output=model_512.predict([traindata_90d,traindata_0d,
+        #                                 traindata_45d,traindata_m45d],batch_size=1)
+        train_output=model_512.predict([valdata_90d,valdata_0d,
+                                        valdata_45d,valdata_m45d],batch_size=1)
             
 
         ''' Save prediction image(disparity map) in 'current_output/' folder '''    
-        train_error, train_bp=display_current_output(train_output, traindata_label, iter00, directory_t)
+        # train_error, train_bp=display_current_output(train_output, traindata_label, iter00, directory_t)
+        train_error, train_bp=display_current_output(train_output, valdata_label, iter00, directory_t)
 
 
         training_mean_squared_error_x100=100*np.average(np.square(train_error))
