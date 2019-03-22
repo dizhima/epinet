@@ -143,9 +143,7 @@ if __name__ == '__main__':
     batch_size=16       
     workers_num=2  # number of threads
     
-    display_status_ratio=1000 
-
-       
+    display_status_ratio=50000 
     
     
     ''' 
@@ -270,7 +268,7 @@ if __name__ == '__main__':
     
     my_generator = myGenerator(traindata_all,traindata_label,input_size,label_size,batch_size,Setting02_AngualrViews ,boolmask_img4,boolmask_img6,boolmask_img15)
     best_bad_pixel=100.0
-    for iter02 in range(50):
+    for iter02 in range(150):
         
         ''' Patch-wise training... start'''
         t0=time.time()
@@ -311,7 +309,7 @@ if __name__ == '__main__':
         val_bad_pixel_ratio=100*np.average(val_bp)
 
 
-        val_info=('iter%04d_valmse%.3f_bp%.2f.hdf5'  
+        val_info=('iter%04d:valmse%.3f,bp%.2f'  
                 % (iter00,val_mean_squared_error_x100,
                           val_bad_pixel_ratio) )
         """ 
