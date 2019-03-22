@@ -89,7 +89,9 @@ if __name__ == '__main__':
     
     if(Setting01_LFdir=='synthetic'):    
         dir_LFimages=['hci_dataset/training/dino','hci_dataset/training/cotton',
-                    'hci_dataset/training/boxes', 'hci_dataset/training/sideboard']
+                    'hci_dataset/training/boxes', 'hci_dataset/training/sideboard',
+                    'hci_dataset/stratified/backgammon', 'hci_dataset/stratified/dots', 
+                    'hci_dataset/stratified/pyramids', 'hci_dataset/stratified/stripes']
         image_w=512
         image_h=512
         
