@@ -140,7 +140,7 @@ if __name__ == '__main__':
         path_weight='epinet_checkpoints/pretrained_5x5.hdf5' # sample weight.    
     if(len(Setting02_AngualrViews)==9):
         # path_weight='epinet_checkpoints/pretrained_9x9.hdf5' # sample weight.
-        path_weight='epinet_checkpoints/EPINET_train_ckp/iter0154_trainmse0.913_bp2.53.hdf5'
+        path_weight='epinet_checkpoints/EPINET_train_ckp/iter0191_trainmse1.781_bp6.15.hdf5'
 
 
 
