@@ -345,10 +345,4 @@
 .epinet_checkpoints/EPINET_train_ckp/iter0204_trainmse1.953_bp6.81.hdf5
 .epinet_checkpoints/EPINET_train_ckp/iter0205_trainmse2.010_bp6.94.hdf5
 
-2019-03-22 22:54:06.955614
 
-
-2019-03-22 23:04:07.633459
-
-.epinet_checkpoints/EPINET_train_ckp/iter0001_trainmse149.014_bp95.91.hdf5
-.iter0001_valmse65.555_bp94.22.hdf5
