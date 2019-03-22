@@ -114,7 +114,7 @@ if __name__ == '__main__':
 
     iter00=0; 
     
-    load_weight_is=True;   
+    load_weight_is=False;   
 
         
     
@@ -136,11 +136,11 @@ if __name__ == '__main__':
     ''' 
     Define Patch-wise training parameters
     '''        
-    input_size=23+2         # Input size should be greater than or equal to 23
+    input_size=23            # Input size should be greater than or equal to 23
     label_size=input_size-22 # Since label_size should be greater than or equal to 1
     Setting02_AngualrViews = np.array([0,1,2,3,4,5,6,7,8])  # number of views ( 0~8 for 9x9 ) 
     
-    batch_size=64       
+    batch_size=16       
     workers_num=2  # number of threads
     
     display_status_ratio=10000 
@@ -292,8 +292,7 @@ if __name__ == '__main__':
             
 
         ''' Save prediction image(disparity map) in 'current_output/' folder '''    
-        # train_error, train_bp=display_current_output(train_output, traindata_label, iter00, directory_t)
-        train_error, train_bp=display_current_output(train_output, valdata_label, iter00, directory_t)
+        train_error, train_bp=display_current_output(train_output, traindata_label, iter00, directory_t)
 
 
         training_mean_squared_error_x100=100*np.average(np.square(train_error))
@@ -303,12 +302,26 @@ if __name__ == '__main__':
         save_path_file_new=(directory_ckp+'/iter%04d_trainmse%.3f_bp%.2f.hdf5'  
                             % (iter00,training_mean_squared_error_x100,
                                       training_bad_pixel_ratio) )
+
+
+        val_error, val_bp=display_current_output(train_output, valdata_label, iter00, directory_t)
+
+
+        val_mean_squared_error_x100=100*np.average(np.square(val_error))
+        val_bad_pixel_ratio=100*np.average(val_bp)
+
+
+        val_info=('iter%04d_valmse%.3f_bp%.2f.hdf5'  
+                % (iter00,val_mean_squared_error_x100,
+                          val_bad_pixel_ratio) )
         """ 
         Save bad pixel & mean squared error
+        also save val bad pixel & MSE
         """        
         print(save_path_file_new)
         f1 = open(txt_name, 'a')
         f1.write('.'+save_path_file_new+'\n')
+        f1.write('.'+val_info+'\n')
         f1.close()              
         t1=time.time()        
         
