@@ -126,7 +126,7 @@ if __name__ == '__main__':
     ''' 
     model_conv_depth=7 # 7 convolutional blocks for second layer
     model_filt_num=70
-    model_learning_rate=0.1**6
+    model_learning_rate=0.1**7
 
 
 
@@ -268,7 +268,7 @@ if __name__ == '__main__':
     
     my_generator = myGenerator(traindata_all,traindata_label,input_size,label_size,batch_size,Setting02_AngualrViews ,boolmask_img4,boolmask_img6,boolmask_img15)
     best_bad_pixel=100.0
-    for iter02 in range(100):
+    for iter02 in range(50):
         
         ''' Patch-wise training... start'''
         t0=time.time()
