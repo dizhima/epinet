@@ -29,9 +29,14 @@ def main():
         default='epinet_output/pretrain/',
         help='save directory')
     args = parser.parse_args()
+
+    '''
+    settings
+    '''
     directory_t = args.dir
     if not os.path.exists(directory_t):
         os.makedirs(directory_t)
+    Setting02_AngualrViews = np.array([0,1,2,3,4,5,6,7,8])
 
 
     ''' 
