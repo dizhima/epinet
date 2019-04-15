@@ -26,7 +26,7 @@ def main():
     parser.add_argument(
         '--dir',
         type=str,
-        default='epinet_output/pretrain/',
+        default='epinet_output/mytrain/',
         help='save directory')
     args = parser.parse_args()
 
@@ -88,7 +88,9 @@ def main():
     '''
     load weights
     '''
-    model_512.load_weights('epinet_checkpoints/pretrained_9x9.hdf5')
+    # model_512.load_weights('epinet_checkpoints/pretrained_9x9.hdf5')
+    model_512.load_weights('epinet_checkpoints/EPINET_train_ckp/iter0198_trainmse0.827_bp2.56.hdf5.hdf5')
+
 
     
     '''    
