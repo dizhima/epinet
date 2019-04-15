@@ -88,7 +88,7 @@ def main():
     '''
     load weights
     '''
-    model.load_weights('epinet_checkpoints/pretrained_9x9.hdf5')
+    model_512.load_weights('epinet_checkpoints/pretrained_9x9.hdf5')
 
     
     '''    
