@@ -94,7 +94,7 @@ def main():
     train_error, train_bp=display_current_output(train_output, traindata_label, 0, directory_t)
     training_mean_squared_error_x100=100*np.average(np.square(train_error))
     training_bad_pixel_ratio=100*np.average(train_bp)
-    print('train mse%.3f,bp%.2f',% (training_mean_squared_error_x100,
+    print('train mse%.3f,bp%.2f' % (training_mean_squared_error_x100,
                                       training_bad_pixel_ratio))
 
 
@@ -104,7 +104,7 @@ def main():
     val_error, val_bp=display_current_output(val_output, valdata_label, 1, directory_t)
     val_mean_squared_error_x100=100*np.average(np.square(val_error))
     val_bad_pixel_ratio=100*np.average(val_bp)
-    print('val mse%.3f,bp%.2f',% (val_mean_squared_error_x100,
+    print('val mse%.3f,bp%.2f' % (val_mean_squared_error_x100,
                                       val_bad_pixel_ratio))
 
 
