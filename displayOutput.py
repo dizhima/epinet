@@ -24,13 +24,13 @@ import argparse
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-    	'--dir',
-    	type=str,
-    	default='epinet_output/pretrain/',
-    	help='save directory')
-	args = parser.parse_args()
-	directory_t = args.dir
-	if not os.path.exists(directory_t):
+        '--dir',
+        type=str,
+        default='epinet_output/pretrain/',
+        help='save directory')
+    args = parser.parse_args()
+    directory_t = args.dir
+    if not os.path.exists(directory_t):
         os.makedirs(directory_t)
 
 
@@ -109,4 +109,4 @@ def main():
 
 
 if __name__ == '__main__':
-	main()
+    main()
