@@ -61,7 +61,8 @@ if __name__ == '__main__':
     
     # Input : input_Cam000-080.png
     # Depth output : image_name.pfm
-    dir_output='epinet_output'
+    # dir_output='epinet_output'
+    dir_output='pre_epinet'
     if not os.path.exists(dir_output):
         os.makedirs(dir_output)   
         
@@ -84,8 +85,9 @@ if __name__ == '__main__':
     Setting01_LFdir = 'Lytro': Test real LF images(Lytro)
     
     '''
-    Setting01_LFdir = 'synthetic'
+    # Setting01_LFdir = 'synthetic'
 #    Setting01_LFdir='Lytro'
+    Setting01_LFdir = 'lego'
     
     if(Setting01_LFdir=='synthetic'):    
         dir_LFimages=['hci_dataset/training/dino','hci_dataset/training/cotton',
@@ -99,6 +101,10 @@ if __name__ == '__main__':
         dir_LFimages=['lytro/2067']    
         image_w=552
         image_h=383  
+    elif(Setting01_LFdir=='Lego'): 
+        dir_LFimages=['data/Lego Knights']    
+        image_w=256
+        image_h=256  
         
         
         
@@ -141,8 +147,8 @@ if __name__ == '__main__':
     if(len(Setting02_AngualrViews)==5):
         path_weight='epinet_checkpoints/pretrained_5x5.hdf5' # sample weight.    
     if(len(Setting02_AngualrViews)==9):
-        # path_weight='epinet_checkpoints/pretrained_9x9.hdf5' # sample weight.
-        path_weight='epinet_checkpoints/EPINET_train_ckp/iter0191_trainmse1.781_bp6.15.hdf5'
+        path_weight='epinet_checkpoints/pretrained_9x9.hdf5' # sample weight.
+        # path_weight='epinet_checkpoints/EPINET_train_ckp/iter0191_trainmse1.781_bp6.15.hdf5'
 
 
 
