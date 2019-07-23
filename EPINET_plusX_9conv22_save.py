@@ -102,7 +102,7 @@ if __name__ == '__main__':
         image_w=552
         image_h=383  
     elif(Setting01_LFdir=='lego'): 
-        dir_LFimages=['data/Lego Knights']    
+        dir_LFimages=['data/LegoKnights']    
         image_w=256
         image_h=256  
         
