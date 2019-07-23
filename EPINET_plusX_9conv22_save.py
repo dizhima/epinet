@@ -87,7 +87,8 @@ if __name__ == '__main__':
     '''
     # Setting01_LFdir = 'synthetic'
 #    Setting01_LFdir='Lytro'
-    Setting01_LFdir = 'lego'
+    # Setting01_LFdir = 'lego'
+    Setting01_LFdir = 'bunny'
     
     if(Setting01_LFdir=='synthetic'):    
         dir_LFimages=['hci_dataset/training/dino','hci_dataset/training/cotton',
@@ -103,6 +104,10 @@ if __name__ == '__main__':
         image_h=383  
     elif(Setting01_LFdir=='lego'): 
         dir_LFimages=['data/LegoKnights']    
+        image_w=256
+        image_h=256 
+    elif(Setting01_LFdir=='bunny'): 
+        dir_LFimages=['data/Bunny']    
         image_w=256
         image_h=256  
         
