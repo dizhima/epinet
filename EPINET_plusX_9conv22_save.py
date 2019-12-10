@@ -85,16 +85,18 @@ if __name__ == '__main__':
     Setting01_LFdir = 'Lytro': Test real LF images(Lytro)
     
     '''
-    # Setting01_LFdir = 'synthetic'
+    Setting01_LFdir = 'synthetic'
 #    Setting01_LFdir='Lytro'
     # Setting01_LFdir = 'lego'
-    Setting01_LFdir = 'bunny'
+    # Setting01_LFdir = 'bunny'
     
     if(Setting01_LFdir=='synthetic'):    
         dir_LFimages=['hci_dataset/training/dino','hci_dataset/training/cotton',
                     'hci_dataset/training/boxes', 'hci_dataset/training/sideboard',
                     'hci_dataset/stratified/backgammon', 'hci_dataset/stratified/dots', 
                     'hci_dataset/stratified/pyramids', 'hci_dataset/stratified/stripes']
+        # dir_LFimages=['hci_dataset/test/bedroom','hci_dataset/test/bicycle',
+        #             'hci_dataset/test/herbs', 'hci_dataset/test/origami',]
         image_w=512
         image_h=512
         
@@ -197,7 +199,9 @@ if __name__ == '__main__':
                                                              image_w,
                                                              Setting02_AngualrViews)
 
-        start=time.clock() 
+        print(val_90d.shape)
+        exit()
+        start=time.time() 
         
         # predict
         val_output_tmp=model_512.predict([ val_90d[:,::img_scale_inv,::img_scale_inv], 
@@ -206,7 +210,7 @@ if __name__ == '__main__':
                                           val_M45d[:,::img_scale_inv,::img_scale_inv]], 
                                           batch_size=1); 
                                           
-        runtime=time.clock() - start
+        runtime=time.time() - start
         plt.imshow(val_output_tmp[0,:,:,0])
         print("runtime: %.5f(s)" % runtime)
          
