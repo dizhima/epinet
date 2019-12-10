@@ -199,8 +199,8 @@ if __name__ == '__main__':
                                                              image_w,
                                                              Setting02_AngualrViews)
 
-        print(val_90d.shape)
-        exit()
+        # print(val_90d.shape)
+        # exit()
         start=time.time() 
         
         # predict
